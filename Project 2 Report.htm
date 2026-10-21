@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Project 2 Report</title>
+        <style>
+            :root {
+                --color-neutral-95: hsl(220 10% 95%);
+                --color-neutral-90: hsl(220 10% 90%);
+                --color-neutral-80: hsl(220 10% 80%);
+                --color-neutral-70: hsl(220 10% 70%);
+                --color-neutral-60: hsl(220 10% 60%);
+                --color-neutral-50: hsl(220 10% 50%);
+                --color-neutral-40: hsl(220 10% 40%);
+                --color-neutral-30: hsl(220 10% 30%);
+                --color-neutral-20: hsl(220 10% 20%);
+                --color-neutral-10: hsl(220 10% 10%);
+            }
+
+            html {
+                font: 100%/1.5 system-ui;
+                counter-reset: figure;
+                background: var(--color-neutral-95);
+                max-width: min(75vw, 80em);
+                margin: 0 auto;
+            }
+
+            /* Headings */
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                line-height: 1.1;
+                font-weight: 600;
+                text-wrap: balance;
+            }
+
+            h1,
+            h2 {
+                border-bottom: 1px solid var(--color-neutral-80);
+                padding-bottom: 0.2em;
+            }
+
+            h1 {
+                margin-block: 1em 0.5rem;
+                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+                font-weight: 800;
+
+                small {
+                    display: block;
+                    width: fit-content;
+                    padding: 0.2em 0.5em;
+                    margin-inline: auto;
+                    color: white;
+                    background: var(--color-neutral-40);
+                    font-size: 40%;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+
+            h2 {
+                font-size: 180%;
+                color: var(--color-neutral-30);
+            }
+
+            h3 {
+                font-size: 130%;
+            }
+
+            /* Lists */
+
+            ul,
+            ol {
+                padding-inline-start: 2em;
+            }
+
+            li {
+                &::marker {
+                    color: var(--color-neutral-40);
+                }
+
+                + li {
+                    margin-top: 0.2em;
+                }
+            }
+
+            /* Sectioning elements */
+
+            header {
+                padding-block: 1em;
+                text-align: center;
+            }
+
+            main {
+                background: white;
+                color: var(--color-neutral-20);
+                border-radius: 1rem;
+                padding: 0.1rem 2rem;
+            }
+
+            /* Figures */
+
+            figure {
+                margin: 1em 0;
+                padding: 0.5rem;
+                margin-inline: -0.5em;
+                border: 1px solid var(--color-neutral-80);
+                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+                text-align: center;
+                background: white;
+
+                > figcaption {
+                    font: 500 75% var(--font-sans);
+                    background: var(--color-neutral-95);
+                    padding: 0.5rem;
+                    margin: -0.5rem;
+                    margin-top: 0.5rem;
+                    counter-increment: figure;
+                    text-align: left;
+
+                    &::before {
+                        content: "Figure " counter(figure) ": ";
+                        font-weight: bold;
+                        color: var(--color-neutral-40);
+                    }
+
+                    a:not(:hover, :focus, :active) {
+                        color: inherit;
+                        text-decoration: underline;
+                        text-decoration-color: color-mix(
+                            in lab,
+                            currentColor,
+                            transparent 70%
+                        );
+                    }
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                <small>Project 2</small>
+                Persuasive or Deceptive Visualization?
+            </h1>
+
+            <p><strong>David Moncivais</strong> — <em>dmoncivais@ucsd.edu</em></p>
+        </header>
+
+        <main>
+            <h2>Proposition: Among the most powerful economies in the Americas, Canada has the lowest labor force participation gap.</h2>
+
+            <section>
+                <h3>FOR the Proposition</h3>
+
+                <figure>
+                    <img src="./ForProp.png" alt="" style="width: 45vw; height: auto;"/>
+                    <figcaption>The graph on the left ranks countries based on their labor force participation gap, while the graph on the right provides a more detailed view of how Canada's gap has narrowed.</figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>Decided to use area chart as the first thing it shows since it can more easily show how close both lines are. (+1.5)</li>
+                    <li>The line chart is a great appendix to this part since it can show how close each line is in a more precise manner. (+2)</li>
+                    <li>The color selection is to make it easier for the reader to identify which line is for each gender (blue for male, pink for female). (+2)</li>
+                    <li>Both graphs were stretched so that the difference can be better perceived.(0)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>AGAINST the Proposition</h3>
+
+                <figure>
+                    <img src="./AgainstProp.png" alt="" style="width: 45vw; height: auto;"/>
+                    <figcaption>The graph on the left shows that Canada and the US share the same labor force participation gap, while the graph on the right reveals that the gap for Canada is actually larger than initially shown.</figcaption>
+                </figure>
+
+                <p>Design Decisions and Rationale:</p>
+
+                <ul>
+                    <li>Used a 100% stacked area charts so that the difference between countries or within the same country will be more difficult to see. (-2)</li>
+                    <li>Maintained the color codes of the previous graphs to not generate confusion. (+1)</li>
+                    <li>Using the stretch of the graphs to play with the perception of the user as if trying to show the same information, just presented in another way. (0)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Final Reflection</h2>
+                <p>To be honest, at the beginning of this project I thought it was going to be simpler than what it was. Finding data to portray in a graph is easy, you just need to make sure you are using the correct type for the message you want to express, change the shape of the graph to make it simpler to read, and add colors to make it more interesting. By this logic the first two graphs were easy to do, I just needed to decide which subject of the data I was trying to tackle. I decided on the difference in gender while trying to be part of the labor force.</p>
+                <p>Next was the “misleading” part of the project. Here I realized that if I truly wanted to mislead people, I needed to use the same data, size, and colors for the graphs to be able to show that the information previously shown was incorrect. Fortunately, the data is presented as a percentage in the raw material, which gave me the idea of using percentage-type graphs to present the data, that way the misleading part of the graphs would be that people would not know what type of percentages I’m showing.</p>
+                <p>This project showed me that misleading representation of the data can be made by simply hiding information on how you are presenting the data and playing with the understanding of people. The graphs I showed, without explanation of what they are or how they are used, can be easily misinterpreted. There’s a question that says, “What bounds (if any) can you draw to distinguish ‘acceptable’ persuasive choices vs. ‘misleading’ ones (and if none, why not)?” and to that I say, that what you are showing starts being misleading when you are hiding data and making it so that people cannot guess what you are showing.</p>
+            </section>
+        </main>
+    </body>
+</html>
